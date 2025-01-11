@@ -18,8 +18,8 @@ def start_rds_instance(rds_identifier:str)->dict:
     
 def stop_rds_instance(rds_identifier:str)->dict:
     try:
-        response = rds_client.stop_dbstop_db_instance(DBInstanceIdentifier=rds_identifier)
-        print("start",response)
+        response = rds_client.stop_db_instance(DBInstanceIdentifier=rds_identifier)
+        print("stop",response)
         print(f"db instance {rds_identifier} stop successfully.")
         return {"code":200,"status":"success","result":response}
     except ClientError as e:
